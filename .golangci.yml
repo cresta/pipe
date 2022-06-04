@@ -13,18 +13,17 @@ linters:
     - gocyclo
     - gofmt
     - goimports
-    - golint
+    - revive
     - gosec
     - gosimple
     - govet
     - ineffassign
-    - interfacer
-    - maligned
+    - fieldalignment
     - megacheck
     - misspell
     - nakedret
     - prealloc
-    - scopelint
+    - exportloopref
     - staticcheck
     - structcheck
     - stylecheck
