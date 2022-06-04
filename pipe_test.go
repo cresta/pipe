@@ -9,13 +9,13 @@ import (
 )
 
 func TestShell(t *testing.T) {
-	require.NoError(t, pipe.Shell("echo hi").Run(context.Background()))
+	require.NoError(t, pipe.Shell("go env").Run(context.Background()))
 }
 
 func TestNewPiped(t *testing.T) {
 	var buf bytes.Buffer
-	require.NoError(t, pipe.NewPiped("echo", "hi").Execute(context.Background(), nil, &buf, nil))
-	require.Contains(t, buf.String(), "hi")
+	require.NoError(t, pipe.NewPiped("go", "env").Execute(context.Background(), nil, &buf, nil))
+	require.Contains(t, buf.String(), "go")
 }
 
 func TestEnv(t *testing.T) {
