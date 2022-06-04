@@ -18,7 +18,6 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - fieldalignment
     - megacheck
     - misspell
     - nakedret
