@@ -1,9 +1,9 @@
-package pipe
+package pipe_test
 
 import (
 	"bytes"
 	"context"
-	"github.com/cresta/magehelper/pipe"
+	"github.com/cresta/pipe"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
