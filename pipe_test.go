@@ -20,6 +20,6 @@ func TestNewPiped(t *testing.T) {
 
 func TestEnv(t *testing.T) {
 	var buf bytes.Buffer
-	require.NoError(t, pipe.Shell("GONOSUMDB=testing go env").Execute(context.Background(), nil, &buf, nil))
+	require.NoError(t, pipe.Shell("GONOSUMDB=testing env").Execute(context.Background(), nil, &buf, nil))
 	require.Contains(t, buf.String(), "testing")
 }
