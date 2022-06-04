@@ -3,9 +3,10 @@ package pipe_test
 import (
 	"bytes"
 	"context"
+	"testing"
+
 	"github.com/cresta/pipe"
 	"github.com/stretchr/testify/require"
-	"testing"
 )
 
 func TestShell(t *testing.T) {
