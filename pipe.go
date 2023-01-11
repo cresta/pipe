@@ -30,14 +30,14 @@ func NewPiped(cmd string, args ...string) *PipedCmd {
 // Shell tries to be like the *sh shell to create a piped command.  It will, after splitting the string, run os.Expand
 // on the parts.  It works correctly for things like this
 //
-//  Shell("echo hi")
-//  Shell("GOOS=linux go build")
-//  Shell("docker run -it ubuntu")
-//  Shell("docker run -v $HOME/.aws:/root/.aws:ro ubuntu")
+//	Shell("echo hi")
+//	Shell("GOOS=linux go build")
+//	Shell("docker run -it ubuntu")
+//	Shell("docker run -v $HOME/.aws:/root/.aws:ro ubuntu")
 //
 // It will not work like bash for things like this
 //
-//  Shell("echo '$HOME'")
+//	Shell("echo '$HOME'")
 //
 // Since it will first split echo into $HOME, and then escape the HOME
 func Shell(fullLine string) *PipedCmd {
