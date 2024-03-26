@@ -24,3 +24,9 @@ func TestEnv(t *testing.T) {
 	require.NoError(t, pipe.Shell("GONOSUMDB=testing env").Execute(context.Background(), nil, &buf, nil))
 	require.Contains(t, buf.String(), "testing")
 }
+
+func TestPipeTo(t *testing.T) {
+	var buf bytes.Buffer
+	require.NoError(t, pipe.Shell("echo hi").PipeTo(pipe.NewPiped("cat")).Execute(context.Background(), nil, &buf, nil))
+	require.Contains(t, buf.String(), "hi")
+}
